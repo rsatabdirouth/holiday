@@ -1,0 +1,15 @@
+{{home.title}}
+
+<nav aria-label="...">
+<ul class="pagination">
+    <li ng-class="home.currentpage==1? 'disabled':''"><a href="javascript:" aria-label="previous"><span>&laquo;</span></a></li>
+    <li ng-class="home.currentpage==page ? 'active':''" ng-repeat="page in home.pages" ng-click="home.pagechange(page)"><a href="javascript:">{{page}}</a></li>
+    <li ng-class="home.currentPage==home.totalpage? 'disabled':''"><a href="javascript:" aria-label="next"><span>&raquo;</span></a></li>
+    
+</ul>
+</nav>
+
+<div class="list-group col-md-6 col-lg-6">
+    <ul style="list-style:none"><li ng-repeat="x in home.pagedpost" ng-click="home.details(x.name,x.date,x.public)"><a class="list-group-item">{{x.date}}</a></li></ul>
+   
+</div>
